@@ -37,7 +37,11 @@ class PessoaFisica(Pessoa):
             return rendimento * 0.5
 
 class PessoaJuridica(Pessoa):
-    pass
+    def __init__(self, nome="", rendimento=0, endereco=None, cnpj=""):
+        if endereco is None: 
+            endereco = Endereco()
+        self.cnpj = cnpj
+        super().__init__(nome, rendimento, endereco)
 
 
         
